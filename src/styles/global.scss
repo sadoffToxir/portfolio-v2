@@ -1,0 +1,59 @@
+@import "variables";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styles */
+body {
+	margin: 0;
+	font-family: "Roboto", sans-serif; /* Use your preferred font */
+	background-color: $dark-background;
+	color: $primary-text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: $highlight;
+}
+
+a {
+	color: $primary-accent;
+	text-decoration: none;
+
+	&:hover {
+		color: $highlight;
+	}
+}
+
+/* Buttons */
+.button {
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.button-primary {
+	background-color: $primary-button-bg;
+	color: $primary-button-text;
+
+	&:hover {
+		background-color: $button-hover-bg;
+		color: $button-hover-text;
+	}
+}
+
+.button-secondary {
+	background-color: $secondary-button-bg;
+	color: $secondary-button-text;
+
+	&:hover {
+		background-color: $button-hover-bg;
+		color: $button-hover-text;
+	}
+}

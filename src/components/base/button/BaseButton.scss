@@ -1,0 +1,14 @@
+/* src/components/Button.scss */
+@import "@/styles/variables";
+
+.button {
+	@extend .button; /* Extend global button styles if applicable */
+}
+
+.button-primary {
+	@extend .button-primary;
+}
+
+.button-secondary {
+	@extend .button-secondary;
+}
