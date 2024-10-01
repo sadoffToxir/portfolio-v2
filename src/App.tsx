@@ -1,11 +1,10 @@
-import { useState } from 'react'
-
+import CoreNavbar from "@components/core/CoreNavbar/CoreNavbar"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
+      <CoreNavbar />
     </>
   )
 }

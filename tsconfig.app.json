@@ -28,5 +28,5 @@
       "@styles/*": ["./src/styles/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "eslint.config.mjs", "postcss.config.cjs", "tailwind.config.js", "vite.config.ts"]
 }

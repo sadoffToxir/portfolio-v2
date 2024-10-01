@@ -1,0 +1,53 @@
+.coreNavbar {
+	display: flex;
+	justify-content: space-between;
+	width: 75%;
+	margin: 0 auto;
+
+	&__wrapper {
+		height: 64px;
+		padding: 10px 0;
+		background-color: #2a2a2a;
+		position: sticky;
+	}
+
+	&__leftHalf {
+		display: flex;
+		align-items: center;
+	}
+
+	&__logo {
+		color: #f1c40f;
+		font-size: 2rem;
+	}
+
+	&__rightHalf {
+		display: flex;
+		align-items: center;
+	}
+
+	&__navList {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+	}
+
+	&__navItem {
+		font-weight: bold;
+
+		& > a {
+			color: $primary-text;
+		}
+		&:hover {
+			& > a {
+				color: $emphasis-text;
+			}
+		}
+
+		&--active {
+			& > a {
+				color: $emphasis-text;
+			}
+		}
+	}
+}

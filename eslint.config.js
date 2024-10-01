@@ -1,44 +1,34 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import react from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import reactThree from '@react-three/eslint-plugin'
+import globals from "globals";
+import pluginJs from "@eslint/js";
+import tseslint from "typescript-eslint";
+import pluginReact from "eslint-plugin-react";
 
 export default [
-  { ignores: ['dist'] },
+  { 
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    ignores: ['dist', 'eslint.config.cjs', "eslint.config.mjs", "postcss.config.cjs", "tailwind.config.js", "vite.config.ts"],
+  },
+  { 
+    languageOptions: { globals: globals.browser } 
+  },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
-    languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
-        sourceType: 'module',
-        project: './tsconfig.json',
+    settings: {
+      react: {
+        version: "detect",
       },
     },
-    settings: { react: { version: '18.3' } },
-    plugins: {
-      react,
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
-      'react-three': reactThree,
-    },
     rules: {
-      ...js.configs.recommended.rules,
-      ...react.configs.recommended.rules,
-      ...react.configs['jsx-runtime'].rules,
-      ...reactHooks.configs.recommended.rules,
-      "react/no-unknown-property": "off",
-      "react/prop-types": "off",
-      'react/jsx-no-target-blank': 'off',
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
-      'indent': ['error', 2],
+      "react/react-in-jsx-scope": "off", 
+      "indent": ["error", 2],
+    },
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
     },
   },
-]
+];
