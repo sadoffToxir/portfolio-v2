@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import './CoreNavbar.scss';
-import {content} from './content';
 import { Link } from "react-router-dom";
 
-const CoreNavbar = () => {
-  const {logo, links} = content;
+import { content } from './content';
 
-  const [active, setActive] = useState("");
-  const [toggle, setToggle] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+import './CoreNavbar.scss';
+
+const CoreNavbar = () => {
+  const { logo, links } = content;
+
+  const [ active, setActive ] = useState("");
+  const [ toggle, setToggle ] = useState(false);
+  const [ scrolled, setScrolled ] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,10 +29,10 @@ const CoreNavbar = () => {
 
   return (
     <div className="coreNavbar__wrapper">
-      <div className="coreNavbar">
+      <div className="coreNavbar container">
         <div className='coreNavbar__leftHalf'>
           <div className='coreNavbar__logo'>
-            <h1>{logo.title}</h1>
+            <h2>{logo.title}</h2>
           </div>
         </div>
         <div className='coreNavbar__rightHalf'>

@@ -7,9 +7,16 @@
 /* Global Styles */
 body {
 	margin: 0;
-	font-family: "Roboto", sans-serif; /* Use your preferred font */
+	font-family: "Roboto", sans-serif;
 	background-color: $dark-background;
 	color: $primary-text;
+}
+
+.container {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 h1,
@@ -56,4 +63,32 @@ a {
 		background-color: $button-hover-bg;
 		color: $button-hover-text;
 	}
+}
+
+// Tailwind CSS
+h1 {
+	@apply text-6xl;
+	@apply font-bold;
+}
+
+h2 {
+	@apply text-4xl;
+	@apply font-bold;
+}
+
+h3 {
+	@apply text-2xl;
+	@apply font-bold;
+}
+
+h4 {
+	@apply text-xl;
+}
+
+h5 {
+	@apply text-lg;
+}
+
+h6 {
+	@apply text-base;
 }

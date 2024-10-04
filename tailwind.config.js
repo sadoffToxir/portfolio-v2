@@ -1,6 +1,9 @@
 module.exports = {
-  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+  content: [ './index.html', './src/**/*.{js,jsx,ts,tsx}' ],
   theme: {
+    fontFamily: {
+      generalsans: [ 'General Sans', 'sans-serif' ],
+    },
     extend: {
       colors: {
         'dark-background': '#1c1c1c',
