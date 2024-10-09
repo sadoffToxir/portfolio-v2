@@ -1,16 +1,11 @@
-import React from 'react';
-import { Link } from "react-router-dom";
-
 import VerticalStroke from '@components/verticalScroll/VerticalScroll'
 import { content } from '@constants/content'
-
-import { Experience } from '../../../types/Experience';
+import { Experience } from '@customTypes/Experience';
 
 import './ExperienceSection.scss'
 
 const ExperienceSection = () => {
   const { experience } = content
-
 
   const CompanyExperience = (props: {companyExperience: Experience}) => {
     const { companyExperience } = props
@@ -37,17 +32,20 @@ const ExperienceSection = () => {
   }
 
   return (
-    <section id="about" className="experienceSection">
-      <div className='experienceSection__content container'>
-        <div className='experienceSection__progress'>
-          <VerticalStroke />
-        </div>
-        <div className='experienceSection__companies'>
-          {
-            Object.keys(experience).map((key, index) => 
-              <CompanyExperience companyExperience={experience[key as keyof typeof experience]} key={index} />
-            )
-          }
+    <section id="experience" className="experienceSection ">
+      <div className='container'>
+        <h2 className='text-emphasis-text mb-5'>Experience</h2>
+        <div className='experienceSection__content'>
+          <div className='experienceSection__progress'>
+            <VerticalStroke />
+          </div>
+          <div className='experienceSection__companies'>
+            {
+              Object.keys(experience).map((key, index) => 
+                <CompanyExperience companyExperience={experience[key as keyof typeof experience]} key={index} />
+              )
+            }
+          </div>
         </div>
       </div>
     </section>

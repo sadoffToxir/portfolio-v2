@@ -15,15 +15,15 @@ export const content = {
       id: 'about',
       link: '#about'
     },
-    experiece: {
-      title: 'Experiece',
-      id: 'experiece',
-      link: '#experiece'
+    experience: {
+      title: 'Experience',
+      id: 'experience',
+      link: '#experience'
     },
-    cv: {
-      title: 'Cv',
-      id: 'cv',
-      link: '#cv'
+    skills: {
+      title: 'Skills',
+      id: 'skills',
+      link: '#skills'
     },
     contact: {
       title: 'Contact',

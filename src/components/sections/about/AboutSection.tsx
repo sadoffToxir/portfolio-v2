@@ -24,7 +24,7 @@ const AboutSection = () => {
           />
         </div>
         <div className='aboutSection__rightContent'>
-          <h2>About me</h2>
+          <h2 className='text-emphasis-text'>About me</h2>
 
           <div>
             {
@@ -43,23 +43,21 @@ const AboutSection = () => {
                   {
                     linksCol.map((link, index) => 
                       
-                      <div
+                      <Link
+                        rel="noreferrer"
+                        to={link.url} 
+                        target="_blank" 
+                        className='aboutSection__socialLink'
                         key={`link.title-${index}`} 
-                        className='flex gap-6 items-center'
                       >
                         <div className='aboutSection__socialIcon'>{link.icon}</div>
-                        <div className='flex flex-col text-primary-text'>
+                        <div className='flex flex-col '>
                           <span className='font-bold'>{link.title}</span>
-                          <Link
-                            to={link.url} 
-                            target="_blank" 
-                            className='aboutSection__socialLink'
-                            rel="noreferrer"
-                          >
+                          <div>
                             <span>{link.text}</span>
-                          </Link>
+                          </div>
                         </div>
-                      </div>
+                      </Link>
                       
                     )
                   }

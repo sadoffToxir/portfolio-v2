@@ -24,7 +24,7 @@
     "paths": {
       "@components/*": ["./src/components/*"],
       "@utils/*": ["./src/utils/*"],
-      "@types/*": ["./src/types/*"],
+      "@customTypes/*": ["./src/types/*"],
       "@constants/*": ["./src/constants/*"],
       "@styles/*": ["./src/styles/*"],
       "@assets/*": ["./src/assets/*"]

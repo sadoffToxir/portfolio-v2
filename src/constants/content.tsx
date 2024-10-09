@@ -1,14 +1,11 @@
-import EmailIcon from '@assets/icons/email.svg?react';
-import GithubIcon from '@assets/icons/github.svg?react';
-import LinkedinIcon from '@assets/icons/linkedin.svg?react';
-import LocationIcon from '@assets/icons/location.svg?react';
+import svgIcons from '@assets/icons';
 
 import { Experience } from '../types/Experience';
 
 export const content = {
   hero: {
     title: 'Hi there!',
-    subtitle: 'I\'m a Frontend Developer passionate about crafting engaging web experiences',
+    subtitle: 'I\'m a <span class="text-emphasis-text">Frontend Developer</span> passionate about crafting engaging web experiences',
     description: 'Let\'s explore my journey together!',
     cta: 'Get in touch',
   },
@@ -24,10 +21,10 @@ export const content = {
       efficient, scalable applications that deliver value to both users and businesses.` 
     ],
     socialLinks: [
-      { title: 'Github', text: 'sadoffToxir', url: 'https://github.com/sadoffToxir', icon: <EmailIcon /> },
-      { title: 'Linkedin', text: 'saidofftoxir', url: 'https://linkedin.com/in/saidofftoxir/', icon: <LinkedinIcon /> },
-      { title: 'Email', text: 'saidovvtokhir@gmail.com', url: 'mailto:saidovvtokhir@gmail.com', icon: <GithubIcon /> },
-      { title: 'Location', text: 'Poland, Lodz', url: 'https://www.google.com/search?q=poland+lodz&oq=poland+lodz&gs_lcrp=EgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyBwgBEC4YgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEC4YgAQyBggGEEUYPDIGCAcQRRg80gEIMTQ5N2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8', icon: <LocationIcon /> },
+      { title: 'Github', text: 'sadoffToxir', url: 'https://github.com/sadoffToxir', icon: svgIcons.github },
+      { title: 'Linkedin', text: 'saidofftoxir', url: 'https://linkedin.com/in/saidofftoxir/', icon: svgIcons.linkedin },
+      { title: 'Email', text: 'saidovvtokhir@gmail.com', url: 'mailto:saidovvtokhir@gmail.com', icon: svgIcons.email },
+      { title: 'Location', text: 'Poland, Lodz', url: 'https://www.google.com/search?q=poland+lodz&oq=poland+lodz&gs_lcrp=EgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyBwgBEC4YgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEC4YgAQyBggGEEUYPDIGCAcQRRg80gEIMTQ5N2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8', icon: svgIcons.location },
     ],
   },
   experience: {
@@ -61,16 +58,58 @@ export const content = {
       ],
     } as Experience,
   },
-  cv: {
-    skills: [
-      { name: 'React', description: 'Proficient in building and maintaining web applications with React.' },
-      { name: 'Vue 2/3', description: 'Experienced in creating interactive interfaces with Vue.' },
-      { name: 'TypeScript', description: 'Strong skills in TypeScript for developing robust web applications.' },
-      { name: 'Nuxt 2/3', description: 'Led migrations from Nuxt 2 to Nuxt 3, ensuring smooth transitions.' },
-      { name: 'Docker', description: 'Used Docker for containerizing E2E tests, ensuring consistency.' },
-      { name: 'Cypress/Playwright', description: 'Wrote comprehensive E2E tests using Cypress and Playwright for various projects.' },
-      { name: 'Jest/Vitest', description: 'Experienced in writing unit tests with Jest and Vitest.' },
-      { name: 'Webpack/Vite', description: 'Configured and optimized projects using Webpack and Vite.' },
+  skills: {
+    languages: [
+      {
+        name: 'JavaScript',
+        icon: 'https://cdn.iconscout.com/icon/free/png-256/javascript-2752148-2284965.png',
+      },
+      {
+        name: 'TypeScript',
+        icon: 'https://cdn.iconscout.com/icon/free/png-256/typescript-1174965.png',
+      },
+      {
+        name: 'HTML',
+        icon: 'https://cdn.iconscout.com/icon/free/png-256/html-2752158-2284975.png',
+      },
+      {
+        name: 'CSS',
+        icon: 'https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png',
+      },
+      {
+        name: 'Node.js',
+        icon: 'https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png',
+      }
+    ],
+    frameworks: [
+      {
+        name: 'React',
+        icon: 'https://cdn.iconscout.com/icon/free/png-256/react-1-282599.png',
+      },
+      {
+        name: 'Vue',
+        icon: 'https://cdn.iconscout.com/icon/free/png-256/vue-282497.png',
+      },
+      {
+        name: 'Nuxt',
+        icon: 'https://cdn.iconscout.com/icon/free/png-256/free-nuxt-dot-js-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-5-pack-logos-icons-3030184.png',
+      },
+      {
+        name: 'Next',
+        icon: 'https://logowik.com/content/uploads/images/nextjs2106.logowik.com.webp',
+      },
+      {
+        name: 'Sass/Scss',
+        icon: 'https://cdn.iconscout.com/icon/free/png-256/sass-226054.png',
+      }
+    ],
+    tools: [
+      'Vuex','Pinia','Vuetify 2/3','Material UI',
+      'Tailwind','Rest','GraphQL','Redux',
+      'Redux Toolkit','NPM','Webpack','Vite',
+      'Docker','Cypress','Playwright','Vitest',
+      'Jest','Eslint','Prettier','Axios','Storybook',
+      'Linux','Git','CI/CD',
     ],
   },
   howCanIHelpYou: {

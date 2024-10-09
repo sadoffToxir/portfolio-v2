@@ -31,6 +31,7 @@ export default [
       "array-bracket-spacing": ["error", "never"],
       "computed-property-spacing": ["error", "never"],
       "no-extra-parens": "error",
+      "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
       "simple-import-sort/imports": [
         "error",
         {

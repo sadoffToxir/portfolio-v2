@@ -1,38 +1,31 @@
-import React, { useEffect, useRef,useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import './VerticalScroll.scss';
 
 const VerticalScroll = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const section = sectionRef.current;
       if (section) {
-        const sectionTop = section.offsetTop; // Section top position
-        const sectionHeight = section.offsetHeight; // Section height
-        const scrollY = window.scrollY; // Current top scroll position 
-        const viewportHeight = window.innerHeight; // Viewport height
-        console.table({ sectionTop, sectionHeight, scrollY, viewportHeight })
-        // Check if the scroll is within the section
-        if(scrollY + viewportHeight / 2 < sectionTop) {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const scrollY = window.scrollY;
+        const viewportHeight = window.innerHeight;
+
+        if (scrollY + viewportHeight / 2 < sectionTop) {
           setScrollProgress(0);
-        } else if(scrollY + viewportHeight / 2 > sectionTop + sectionHeight) {
+        } else if (scrollY + viewportHeight / 2 > sectionTop + sectionHeight) {
           setScrollProgress(100);
-        } else if(scrollY + viewportHeight / 2 >= sectionTop && scrollY + viewportHeight / 2 <= sectionTop + sectionHeight) {
-
-          // if (scrollY + viewportHeight >= sectionTop && scrollY <= sectionTop + sectionHeight) {
-          // ((current bottom scroll) - (start of the section)) / (section height + viewport height) * 100
-          // 2624 - 1728 / 1792 = 0.5 * 100 = 50%
-          const progress = 100 - 100 * (1 - (scrollY + viewportHeight / 2 - sectionTop) / sectionHeight)
-
-          
-          // const progress =
-          //   ((scrollY + viewportHeight - sectionTop) / (sectionHeight + viewportHeight)) * 100; // percentage of the scroll within the section
-          console.log(progress)
-          setScrollProgress(progress > 100 ? 100 : progress); 
-        } 
+        } else if (
+          scrollY + viewportHeight / 2 >= sectionTop &&
+          scrollY + viewportHeight / 2 <= sectionTop + sectionHeight
+        ) {
+          const progress = 100 - 100 * (1 - (scrollY + viewportHeight / 2 - sectionTop) / sectionHeight);
+          setScrollProgress(progress > 100 ? 100 : progress);
+        }
       }
     };
 
@@ -48,9 +41,8 @@ const VerticalScroll = () => {
           style={{ height: `${scrollProgress}%` }}
         ></div>
       </div>
-      {/* Your section content goes here */}
     </div>
-  )
+  );
 };
 
 export default VerticalScroll;
