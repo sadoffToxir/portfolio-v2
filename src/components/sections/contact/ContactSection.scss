@@ -6,12 +6,40 @@
 
 	&__content {
 		display: flex;
+		gap: 2rem;
 	}
 
 	&__form {
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
 		flex: 1;
+		gap: 1rem;
+	}
+
+	&__social {
+		display: flex;
+	}
+
+	&__socialLinks {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	&__socialIcon {
+		color: $primary-accent;
+		width: 2rem;
+		height: 2rem;
+	}
+
+	&__socialLink {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		color: $primary-text;
+
+		&:hover {
+			color: $highlight;
+		}
 	}
 }

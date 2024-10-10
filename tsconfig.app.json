@@ -27,7 +27,8 @@
       "@customTypes/*": ["./src/types/*"],
       "@constants/*": ["./src/constants/*"],
       "@styles/*": ["./src/styles/*"],
-      "@assets/*": ["./src/assets/*"]
+      "@assets/*": ["./src/assets/*"],
+      "@services/*": ["./src/services/*"],
     }
   },
   "include": ["src", "eslint.config.mjs", "postcss.config.cjs", "tailwind.config.js", "vite.config.ts"]

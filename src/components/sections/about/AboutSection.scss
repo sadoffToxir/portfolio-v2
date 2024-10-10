@@ -2,13 +2,12 @@
 
 .aboutSection {
 	display: flex;
-	align-items: center;
+	flex-direction: column;
 	padding: 5rem 0;
 	background-color: $dark-background-v1-transparent;
 
 	&__content {
 		display: flex;
-		align-items: center;
 		flex-wrap: wrap;
 	}
 
@@ -20,34 +19,25 @@
 		gap: 1rem;
 	}
 
+	&__rightContent {
+		height: 100%;
+		flex: 1;
+		gap: 20px;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+	}
+
 	&__profileImage {
 		background-color: #1c1c1c;
 		border-radius: 1rem;
 		box-shadow: 0px 0px 5px 0px rgba(241, 196, 15, 1);
 		border: 1px solid #f1c40f;
 		width: 100%;
-		max-width: 400px;
+		max-width: 350px;
 		height: auto;
 		object-fit: cover;
-	}
-
-	&__rightContent {
-		height: 100%;
-		flex: 1;
-		gap: 20px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-
-	&__social {
-		display: flex;
-	}
-
-	&__socialLinks {
-		display: flex;
-		flex-direction: column;
-		gap: 20px;
 	}
 
 	&__socialIcon {

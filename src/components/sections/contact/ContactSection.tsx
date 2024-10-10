@@ -1,41 +1,103 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import BaseInput from '@components/base/input/BaseInput';
-import BaseTextarea from '@components/base/textarea/BaseTextarea';
+import { content } from '@constants/content';
+import services from '@services/contact.ts';
+import { validateForm } from '@utils/validation';
 
 import './ContactSection.scss'
 
 const ContactSection = () => {
-  const formRef = useRef<HTMLFormElement>(null);
-  
+  const { contact } = content;
+
+  const fullName = useRef<HTMLInputElement>(null);
+  const email = useRef<HTMLInputElement>(null);
+  const message = useRef<HTMLTextAreaElement>(null);
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log(event.currentTarget);
-    
-    if (formRef.current) {
-      formRef.current.reset();
+    setErrors({});
+
+    const data: Record<string, string> = {
+      fullName: fullName.current!.value,
+      email: email.current!.value,
+      message: message.current!.value
     }
+
+    const validationErrors = validateForm(data);
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    services.sendEmail(data);
+
+    fullName.current!.value = '';
+    email.current!.value = '';
+    message.current!.value = '';
   }
+
+  const socialLinks = [ 
+    contact.textColumn.socialLinks.slice(0, Math.ceil(contact.textColumn.socialLinks.length / 2)), 
+    contact.textColumn.socialLinks.slice(Math.ceil(contact.textColumn.socialLinks.length / 2), 6)]
 
   return (
     <section id="contact" className="contactSection">
       <div className='container'>
-        <h2 className='text-emphasis-text mb-5'>Contact</h2>
-        <div className='skillsSection__content'> 
-          <div className='contactSection__leftContent'>
-            <h3>Get in touch</h3>
-            <p>Feel free to reach out to me if you have any questions or want to work together.</p>
-            <form onSubmit={handleSubmit} ref={formRef} className='contactSection__form'>
-              <div className='contactSection__inputGroup'>
-                <BaseInput id='fullName' label='Full Name'/>
+        <h2 className='text-emphasis-text mb-12'>Contact</h2>
+        <div className='contactSection__content'> 
+          <div className='flex-1'>
+            <h3 className='mb-3'>{contact.textColumn.title}</h3>
+            <p className='mb-12'>{contact.textColumn.description}</p>
+            <div className='flex gap-20'>
+              {
+                socialLinks.map((linksCol, index) => 
+                  <div key={`linksCol-${index}`} className='contactSection__socialLinks'>
+                    {
+                      linksCol.map((link, index) => 
+                        <Link
+                          rel="noreferrer"
+                          to={link.url} 
+                          target="_blank" 
+                          className='contactSection__socialLink'
+                          key={`link.title-${index}`} 
+                        >
+                          <div className='contactSection__socialIcon'>{link.icon}</div>
+                          <div className='flex flex-col '>
+                            <span className='font-bold'>{link.title}</span>
+                            <div>
+                              <span>{link.text}</span>
+                            </div>
+                          </div>
+                        </Link>
+                      )
+                    }
+                  </div>
+                )
+              }
+            </div>
+          </div>
+          <div className='flex-1'>
+            <form onSubmit={handleSubmit} className='contactSection__form'>
+              <div className='flex flex-col'>
+                <label htmlFor="fullName">Full Name</label>
+                <input ref={fullName} id='fullName' className={errors.fullName ? 'border-red-500' : ''} />
+                <span className='text-red-500'>{errors.fullName && errors.fullName}</span>
               </div>
-              <div className='contactSection__inputGroup'>
-                <BaseInput id='email' label='Email '/>
+              <div className='flex flex-col'>
+                <label htmlFor="email">Email</label>
+                <input ref={email} id='email' className={errors.email ? 'border-red-500' : ''} />
+                <span className='text-red-500'>{errors.email && errors.email}</span>
               </div>
-              <div className='contactSection__inputGroup'>
-                <BaseTextarea id='message' label='Message' />
+              <div className='flex flex-col'>
+                <label htmlFor="message">Message</label>
+                <textarea ref={message} id='message' className={`min-h-52 ${errors.message && 'border-red-500'}`}/>
+                <span className='text-red-500'>{errors.message && errors.message}</span>
               </div>
-              <button className='btn btn-primary' type="submit">Send</button>
+              <button className='button button-primary'>Send</button>
             </form>
           </div>
         </div>

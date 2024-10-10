@@ -21,10 +21,11 @@ export const content = {
       efficient, scalable applications that deliver value to both users and businesses.` 
     ],
     socialLinks: [
-      { title: 'Github', text: 'sadoffToxir', url: 'https://github.com/sadoffToxir', icon: svgIcons.github },
-      { title: 'Linkedin', text: 'saidofftoxir', url: 'https://linkedin.com/in/saidofftoxir/', icon: svgIcons.linkedin },
-      { title: 'Email', text: 'saidovvtokhir@gmail.com', url: 'mailto:saidovvtokhir@gmail.com', icon: svgIcons.email },
-      { title: 'Location', text: 'Poland, Lodz', url: 'https://www.google.com/search?q=poland+lodz&oq=poland+lodz&gs_lcrp=EgZjaHJvbWUqCggAEAAY4wIYgAQyCggAEAAY4wIYgAQyBwgBEC4YgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEC4YgAQyBggGEEUYPDIGCAcQRRg80gEIMTQ5N2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8', icon: svgIcons.location },
+      { url: 'https://github.com/sadoffToxir', icon: svgIcons.github },
+      { url: 'https://linkedin.com/in/saidofftoxir/', icon: svgIcons.linkedin },
+      { url: 'mailto:saidovvtokhir@gmail.com', icon: svgIcons.email },
+      { url: 'https://wa.me/48573347445', icon: svgIcons.whatsapp },
+      { url: 'https://t.me/Notfound777', icon: svgIcons.telegram },
     ],
   },
   experience: {
@@ -111,6 +112,10 @@ export const content = {
       'Jest','Eslint','Prettier','Axios','Storybook',
       'Linux','Git','CI/CD',
     ],
+    cv: {
+      text: 'View CV',
+      url: 'https://drive.google.com/file/d/1ILaDqQQ72sc-nK4Jm-iA6mlb1CsX29hB/view?usp=sharing'
+    }
   },
   howCanIHelpYou: {
     title: 'How can I help you?',
@@ -138,12 +143,19 @@ export const content = {
     ],
   },
   contact: {
-    formFields: {
-      topic: 'Topic',
-      name: 'Name and Surname',
-      message: 'Message',
-      submit: 'Submit',
+    textColumn: {
+      title: 'Get in touch',
+      description: 'Feel free to reach out to me through any of the social platforms below. I\'m always open to connecting and discussing new opportunities.',
+      socialLinks: [
+        { title: 'Email', text: 'saidovvtokhir@gmail.com', url: 'mailto:saidovvtokhir@gmail.com', icon: svgIcons.email },
+        { title: 'LinkedIn', text: 'saidofftoxir', url: 'https://linkedin.com/in/saidofftoxir/', icon: svgIcons.linkedin },
+        { title: 'GitHub', text: 'sadoffToxir', url: 'https://github.com/sadoffToxir', icon: svgIcons.github },
+        { title: 'WhatsApp', text: '+48 573 347 445', url: 'https://wa.me/48573347445', icon: svgIcons.whatsapp },
+        { title: 'Telegram', text: '@Notfound777', url: 'https://t.me/Notfound777', icon: svgIcons.telegram },
+      ],
     },
-    confirmationMessage: 'Thank you for reaching out! I will get back to you soon.',
+    formColumn: {
+      confirmationMessage: 'Thank you for reaching out! Your message has been submitted successfully!',
+    }
   },
 }

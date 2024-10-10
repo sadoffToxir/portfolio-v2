@@ -28,12 +28,44 @@ a {
 	}
 }
 
+label {
+	// color: $primary-accent;
+	font-size: 14px;
+	font-weight: 600;
+	margin-bottom: 8px;
+	line-height: 1.4;
+}
+
+input,
+textarea {
+	padding: 12px;
+	background-color: $accent-color;
+	border: 1px solid white;
+	color: white;
+	border-radius: 5px;
+	font-size: 14px;
+
+	&:hover {
+		background-color: $dark-background-v1;
+	}
+
+	&:focus,
+	&:focus-visible {
+		border: 1px solid $primary-accent;
+		box-shadow: 0px 0px 5px $primary-accent;
+	}
+
+	&::placeholder {
+		color: $placeholder-text;
+	}
+}
+
 /* Buttons */
 .button {
 	padding: 10px 20px;
 	border: none;
 	cursor: pointer;
-	// font-size: 16px;
+	text-align: center;
 }
 
 .button-primary {

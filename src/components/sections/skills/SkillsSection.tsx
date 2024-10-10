@@ -1,3 +1,6 @@
+
+import { Link } from 'react-router-dom'
+
 import { content } from '@constants/content'
 
 import './SkillsSection.scss'
@@ -8,7 +11,7 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="skillsSection">
       <div className='container'>
-        <h2 className='text-emphasis-text mb-5'>Skills</h2>
+        <h2 className='text-emphasis-text mb-12'>Skills</h2>
         <div className='skillsSection__content'>
           <div className='skillsSection__leftContent'>
             <div>
@@ -36,6 +39,9 @@ const SkillsSection = () => {
                   )
                 }
               </div>
+            </div>
+            <div className='mt-10'>
+              <Link target='_blank' to={skills.cv.url}><button className='button button-primary flex gap-2 hover:gap-3'><span>{skills.cv.text}</span> <span>&#10148;</span></button></Link>
             </div>
           </div>
 

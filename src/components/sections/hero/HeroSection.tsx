@@ -15,7 +15,7 @@ const HeroSection = () => {
         <h2 dangerouslySetInnerHTML={{ __html: subtitle }} />
         <h3>{description}</h3>
         <div>
-          <BaseButton>{cta}</BaseButton>
+          <button className='button button-primary'>{cta}</button>
         </div>
       </div>
       <div className='heroSection__mediaBlock'>

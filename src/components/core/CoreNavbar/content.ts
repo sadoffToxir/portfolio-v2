@@ -1,8 +1,8 @@
 export const content = {
   logo: {
-    title: "Tokhir Saidov",
-    id: "logo",
-    link: "#home"
+    title: 'Tokhir Saidov',
+    id: 'logo',
+    link: '#home'
   },
   links: {
     home: {

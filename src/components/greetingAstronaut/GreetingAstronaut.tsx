@@ -11,20 +11,20 @@ function GreetingAstronaut(props: JSX.IntrinsicElements['group']) {
   const { nodes, animations, materials } = useGLTF('/models/greeting_astronaut/scene.gltf') as GLTFResult
   const { actions, names } = useAnimations(animations, group)
 
-  const [ diffuse, normal, occlusion ] = useLoader(THREE.TextureLoader, [
+  const [diffuse, normal, occlusion] = useLoader(THREE.TextureLoader, [
     '/models/greeting_astronaut/textures/material_0_diffuse.png',
     '/models/greeting_astronaut/textures/material_0_normal.png',
     '/models/greeting_astronaut/textures/material_0_occlusion.png',
   ])
-  const [ diffuse2, normal2, occlusion2 ] = useLoader(THREE.TextureLoader, [
+  const [diffuse2, normal2, occlusion2] = useLoader(THREE.TextureLoader, [
     '/models/greeting_astronaut/textures/material_2_diffuse.png',
     '/models/greeting_astronaut/textures/material_2_normal.png',
     '/models/greeting_astronaut/textures/material_2_occlusion.png',
   ])
 
   useMemo(() => {
-    [ diffuse, normal, occlusion, diffuse2, normal2, occlusion2 ].forEach(texture => (texture.flipY = false))
-  }, [ diffuse, normal, occlusion, diffuse2, normal2, occlusion2 ])
+    [diffuse, normal, occlusion, diffuse2, normal2, occlusion2].forEach(texture => texture.flipY = false)
+  }, [diffuse, normal, occlusion, diffuse2, normal2, occlusion2])
 
   const material0 = useMemo(() => {
     return new THREE.MeshStandardMaterial({
@@ -35,7 +35,7 @@ function GreetingAstronaut(props: JSX.IntrinsicElements['group']) {
       roughness: 1,
       metalness: 1,
     })
-  }, [ diffuse, normal, occlusion ])
+  }, [diffuse, normal, occlusion])
 
   const material2 = useMemo(() => {
     return new THREE.MeshStandardMaterial({
@@ -46,14 +46,14 @@ function GreetingAstronaut(props: JSX.IntrinsicElements['group']) {
       roughness: 1,
       metalness: 1,
     })
-  }, [ diffuse2, normal2, occlusion2 ])
+  }, [diffuse2, normal2, occlusion2])
 
   useEffect(() => {
     let isCancelled = false;
     const timeouts: NodeJS.Timeout[] = [];
   
-    const action0 = actions[ names[ 0 ] ];
-    const action2 = actions[ names[ 2 ] ];
+    const action0 = actions[names[0]];
+    const action2 = actions[names[2]];
   
     const playSequence = () => {
       if (isCancelled) return;
@@ -88,7 +88,7 @@ function GreetingAstronaut(props: JSX.IntrinsicElements['group']) {
       action0?.stop();
       action2?.stop();
     };
-  }, [ actions, names ]);
+  }, [actions, names]);
   
   useThree(({ camera }) => {
     camera.rotation.set(THREE.MathUtils.degToRad(0), 0, 0)
@@ -99,12 +99,12 @@ function GreetingAstronaut(props: JSX.IntrinsicElements['group']) {
       <group name="Sketchfab_Scene">
         <group
           name="Sketchfab_model"
-          rotation={[ -Math.PI / 2, 0, -0.4 ]}
+          rotation={[-Math.PI / 2, 0, -0.4]}
           scale={1}
-          position={[ 0, -3, 0 ]}
+          position={[0, -3, 0]}
         >
           <group name="root">
-            <group name="GLTF_SceneRootNode" rotation={[ Math.PI / 1.9, 0.2, 0 ]}>
+            <group name="GLTF_SceneRootNode" rotation={[Math.PI / 1.9, 0.2, 0]}>
               <group name="RootNode0_0" scale={0.025}>
                 <group name="skeletal3_6">
                   <group name="GLTF_created_0">
@@ -124,7 +124,7 @@ function GreetingAstronaut(props: JSX.IntrinsicElements['group']) {
                     <skinnedMesh
                       name="Object_103"
                       geometry={nodes.Object_103.geometry}
-                      material={materials[ 'material_1' ]}
+                      material={materials['material_1']}
                       skeleton={nodes.Object_103.skeleton}
                     />
                     <skinnedMesh
