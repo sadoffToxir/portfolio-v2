@@ -1,9 +1,10 @@
-import CheckIcon from '@assets/icons/check.svg?react';
-import EmailIcon from '@assets/icons/email.svg?react';
-import GithubIcon from '@assets/icons/github.svg?react';
-import LinkedinIcon from '@assets/icons/linkedin.svg?react';
-import TelegramIcon from '@assets/icons/telegram.svg?react';
-import WhatsappIcon from '@assets/icons/whatsapp.svg?react';
+import CheckIcon from './check.svg?react';
+import EmailIcon from './email.svg?react';
+import GithubIcon from './github.svg?react';
+import LinkedinIcon from './linkedin.svg?react';
+import Loader from './loader.svg?react';
+import TelegramIcon from './telegram.svg?react';
+import WhatsappIcon from './whatsapp.svg?react';
 
 export default { 
   email: <EmailIcon />, 
@@ -12,4 +13,5 @@ export default {
   whatsapp: <WhatsappIcon />,
   telegram: <TelegramIcon />,
   check: <CheckIcon />,
+  loader: <Loader />,
 };

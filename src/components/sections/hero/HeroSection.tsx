@@ -1,5 +1,7 @@
+import { Suspense } from 'react';
 import { Link } from 'react-router-dom';
 
+import BaseCanvasLoader from '@components/base/BaseCanvasLoader/BaseCanvasLoader';
 import GreetingAstronaut from '@components/greetingAstronaut/GreetingAstronaut';
 import { content } from '@constants/content';
 import { Environment } from '@react-three/drei';
@@ -19,10 +21,12 @@ const HeroSection = () => {
         </div>
       </div>
       <div className='heroSection__mediaBlock'>
-        <Canvas shadows className='z-[1]'>
-          <Environment preset="city" />
-          <GreetingAstronaut />
-        </Canvas>
+        <Suspense fallback={<BaseCanvasLoader />}>
+          <Canvas shadows className='z-[1]'>
+            <Environment preset="city" />
+            <GreetingAstronaut />
+          </Canvas>
+        </Suspense>
       </div>
     </section>
   );
