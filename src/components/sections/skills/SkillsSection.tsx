@@ -41,7 +41,11 @@ const SkillsSection = () => {
               </div>
             </div>
             <div className='mt-10'>
-              <Link target='_blank' to={skills.cv.url}><button className='button button-primary flex gap-2 hover:gap-3'><span>{skills.cv.text}</span> <span>&#10148;</span></button></Link>
+              <Link target='_blank' to={skills.cv.url}>
+                <button className='button button-primary flex gap-2 hover:gap-3'>
+                  <span>{skills.cv.text}</span> <span>&#8594;</span>
+                </button>
+              </Link>
             </div>
           </div>
 

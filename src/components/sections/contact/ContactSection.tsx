@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import svgIcons from '@assets/icons/index.tsx';
 import { content } from '@constants/content';
 import services from '@services/contact.ts';
 import { validateForm } from '@utils/validation';
@@ -14,9 +15,12 @@ const ContactSection = () => {
   const email = useRef<HTMLInputElement>(null);
   const message = useRef<HTMLTextAreaElement>(null);
 
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    setLoading(true);
     event.preventDefault();
     setErrors({});
 
@@ -30,10 +34,14 @@ const ContactSection = () => {
 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
+      setLoading(false);
       return;
     }
 
     services.sendEmail(data);
+
+    setSuccess(true);
+    setLoading(false);
 
     fullName.current!.value = '';
     email.current!.value = '';
@@ -81,24 +89,36 @@ const ContactSection = () => {
             </div>
           </div>
           <div className='flex-1'>
-            <form onSubmit={handleSubmit} className='contactSection__form'>
-              <div className='flex flex-col'>
-                <label htmlFor="fullName">Full Name</label>
-                <input ref={fullName} id='fullName' className={errors.fullName ? 'border-red-500' : ''} />
-                <span className='text-red-500'>{errors.fullName && errors.fullName}</span>
-              </div>
-              <div className='flex flex-col'>
-                <label htmlFor="email">Email</label>
-                <input ref={email} id='email' className={errors.email ? 'border-red-500' : ''} />
-                <span className='text-red-500'>{errors.email && errors.email}</span>
-              </div>
-              <div className='flex flex-col'>
-                <label htmlFor="message">Message</label>
-                <textarea ref={message} id='message' className={`min-h-52 ${errors.message && 'border-red-500'}`}/>
-                <span className='text-red-500'>{errors.message && errors.message}</span>
-              </div>
-              <button className='button button-primary'>Send</button>
-            </form>
+            {
+              success 
+                ? <div className='contactSection__successfulSubmit'>
+                  <div className='contactSection__successIcon'>
+                    {svgIcons.check}
+                  </div>
+                  <h3>{contact.formColumn.successMessage}</h3>
+                  <button className='button button-secondary flex gap-2 hover:gap-3' onClick={() => setSuccess(false)}>
+                    <span>&#8592;</span> <span>Back to form</span>
+                  </button>
+                </div>
+                : <form onSubmit={handleSubmit} className='contactSection__form'>
+                  <div className='flex flex-col'>
+                    <label htmlFor="fullName">Full Name</label>
+                    <input ref={fullName} id='fullName' className={errors.fullName ? 'border-red-500' : ''} />
+                    <span className='text-red-500'>{errors.fullName && errors.fullName}</span>
+                  </div>
+                  <div className='flex flex-col'>
+                    <label htmlFor="email">Email</label>
+                    <input ref={email} id='email' className={errors.email ? 'border-red-500' : ''} />
+                    <span className='text-red-500'>{errors.email && errors.email}</span>
+                  </div>
+                  <div className='flex flex-col'>
+                    <label htmlFor="message">Message</label>
+                    <textarea ref={message} id='message' className={`min-h-52 ${errors.message && 'border-red-500'}`}/>
+                    <span className='text-red-500'>{errors.message && errors.message}</span>
+                  </div>
+                  <button className={`button button-primary ${loading && 'loading'}`}>{loading ? '' : 'Submit'}</button>
+                </form>
+            }
           </div>
         </div>
       </div>

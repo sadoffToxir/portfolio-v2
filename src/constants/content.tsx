@@ -4,21 +4,26 @@ import { Experience } from '../types/Experience';
 
 export const content = {
   hero: {
-    title: 'Hi there!',
-    subtitle: 'I\'m a <span class="text-emphasis-text">Frontend Developer</span> passionate about crafting engaging web experiences',
-    description: 'Let\'s explore my journey together!',
-    cta: 'Get in touch',
+    title: 'I\'m a <span class="text-emphasis-text">Frontend Developer</span> passionate about crafting engaging web experiences',
+    cta: {
+      text: 'Get in touch',
+      url: '#contact'
+    },
+    cv: {
+      text: 'View CV',
+      url: 'https://drive.google.com/file/d/1ILaDqQQ72sc-nK4Jm-iA6mlb1CsX29hB/view?usp=sharing'
+    }
   },
   about: {
     description: [ 
-      `I am a focused Frontend Developer with expertise in building user-friendly 
-      applications using React, Vue 2/3, and TypeScript. I prioritize clean, maintainable code 
-      and efficient solutions, working well within Agile teams to deliver high-quality web 
-      applications. With a solid technical background, I continuously improve my skills to stay 
-      updated with modern development practices.`,
-      `I specialize in ensuring that projects meet both technical requirements and user 
-      expectations. My approach is practical and results-oriented, with an emphasis on creating
-      efficient, scalable applications that deliver value to both users and businesses.` 
+      `Frontend Developer with <b>4+</b> years of commercial experience, working in teams ranging from small groups of
+      3 to larger teams of 15-20 members. <b>Led successful projects</b> like migrating applications from Nuxt 2 to
+      Nuxt 3, improving performance and user experience. Worked with multi-language applications with
+      technologies like Localise and Poeditor. Experienced in building internal component libraries using styled
+      components improving development efficiency across teams`,
+      `Skilled in <b>interviewing candidates</b> for frontend developer positions and <b>mentoring junior</b> developers,
+      aiding in their onboarding and professional growth. Participated in the "Collabothon" hackathons in 2023 and
+      2024, showcasing collaboration and innovation.` 
     ],
     socialLinks: [
       { url: 'https://github.com/sadoffToxir', icon: svgIcons.github },
@@ -31,31 +36,39 @@ export const content = {
   experience: {
     olxGroup: {
       logo: 'https://media.licdn.com/dms/image/v2/D4D0BAQG0ol2oatlPIQ/company-logo_200_200/company-logo_200_200/0/1720445566441/olx_group_logo?e=2147483647&v=beta&t=wtZgDmndDl1GtKvWS4Rvar2yjjDru-IhZTbkgSjCf1I',
+      link: 'https://www.linkedin.com/company/olx-group/',
       company: 'OLX Group',
       role: 'Frontend Developer',
-      period: '2022 - Present',
+      period: '10/2022 - Present (2+ years)',
       achievements: [
-        'Worked in a team with Agile methodology using the Scrum framework.',
-        'Built web applications using React, Vue 2/3, Nuxt 2/3, Vuex, Pinia, and TypeScript.',
-        'Led the migration from Nuxt 2 to Nuxt 3 by breaking down tasks and delegating responsibilities.',
-        'Achieved 100% E2E test coverage with Cypress and Playwright across user flows.',
-        'Dockerized E2E tests on Playwright to ensure consistency between local environments and CI/CD pipelines.',
-        'Integrated live code editor in frontend application.',
-        'Improved application security, raising the metric from B to A+ on securityheaders.com.',
-        'Enhanced accessibility, achieving a 96% score on pagespeed.web.dev.',
-        'Implemented user behavior tracking using the Nina SDK, contributing to a 20% revenue increase.',
+        `- <b>Led the migration</b> from Nuxt 2 to Nuxt 3 by breaking down tasks, estimating work, and delegating
+        responsibilities among team members, resulting in a <b>19.2%</b> improvement in application performance and
+        reducing development time by almost <b>30%</b>.`,
+        `- <b>Dockerized End-to-End tests</b> using Playwright, which streamlined the testing process and decreased test
+        execution time by <b>37.5%</b>, enhancing CI/CD pipeline efficiency.`,
+        `- Implemented user behavior <b>tracking using the Nina SDK</b> to enable data-driven decisions, increasing revenue by
+        <b>20%</b> through improved user engagement strategies.`,
+        `- <b>Enhanced website accessibility</b>, achieving a <b>96%</b> score on PageSpeed Insights, which led to a <b>16.3%</b> increase in
+        user retention and satisfaction.`,
+        `- Wrote <b>E2E, tests, and Unit tests</b>, increasing test coverage from <b>48%</b> to <b>78%</b> and reducing bug-
+        related incidents by <b>33.9%</b>.`,
+        `- Collaborated on maintaining the <b>Storybook component library</b> for React, Next.js, improving UI consistency and
+        reducing development time by <b>15%</b>.`
       ],
     } as Experience,
     exadel: {
       logo: 'https://media.licdn.com/dms/image/v2/D4D0BAQEyuAesmFwWPA/company-logo_200_200/company-logo_200_200/0/1704999546975/exadel_logo?e=2147483647&v=beta&t=eoE4xGPU-jw3ULNVUCP5O4YkdSb5Sx9Xi-RB3tQNhe8',
+      link: 'https://www.linkedin.com/company/exadel/',
       company: 'Exadel',
       role: 'Frontend Developer',
-      period: '2020-2022',
+      period: '07/2020-10/2022 (2.2 years)',
       achievements: [
-        'Developed a comprehensive educational tool to improve English language skills within an organization using React and TypeScript.',
-        'Designed and programmed a multi-theme application with clean structure for theme control (dark and light).',
-        'Implemented drag-n-drop functionality for the React application.',
-        'Achieved 100% E2E test coverage using Cypress, ensuring smooth user interactions.',
+        `- <b>Improved security</b> by applying proper response headers, raising the security metric from a B to an A+ on
+        securityheaders.com, effectively reducing potential vulnerabilities by <b>85%</b>.`,
+        `- Implemented code-splitting and lazy loading techniques, reducing initial load times by <b>36,9%</b> and <b>increasing site
+        performance</b> scores on Lighthouse to above <b>90%</b>.`,
+        `- <b>Optimized responsive design</b>, increasing mobile user engagement by <b>9.5%</b> and boosting user satisfaction scores
+        by <b>7.4%</b>`,
       ],
     } as Experience,
   },
@@ -155,7 +168,7 @@ export const content = {
       ],
     },
     formColumn: {
-      confirmationMessage: 'Thank you for reaching out! Your message has been submitted successfully!',
+      successMessage: 'Thank you for reaching out! Your message has been submitted successfully!',
     }
   },
 }

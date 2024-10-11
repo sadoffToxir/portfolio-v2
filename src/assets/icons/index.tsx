@@ -1,3 +1,4 @@
+import CheckIcon from '@assets/icons/check.svg?react';
 import EmailIcon from '@assets/icons/email.svg?react';
 import GithubIcon from '@assets/icons/github.svg?react';
 import LinkedinIcon from '@assets/icons/linkedin.svg?react';
@@ -9,5 +10,6 @@ export default {
   github: <GithubIcon />,
   linkedin: <LinkedinIcon />,
   whatsapp: <WhatsappIcon />,
-  telegram: <TelegramIcon />
+  telegram: <TelegramIcon />,
+  check: <CheckIcon />,
 };

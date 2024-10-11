@@ -17,6 +17,10 @@
 		flex-direction: column;
 		justify-content: flex-start;
 		gap: 1rem;
+
+		& b {
+			color: $primary-accent;
+		}
 	}
 
 	&__rightContent {

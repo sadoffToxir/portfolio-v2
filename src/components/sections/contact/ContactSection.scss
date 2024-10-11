@@ -1,4 +1,4 @@
-@import "@styles/variables.scss";
+@import "@styles/_variables.scss";
 
 .contactSection {
 	background-color: $dark-background-transparent;
@@ -14,6 +14,20 @@
 		flex-direction: column;
 		flex: 1;
 		gap: 1rem;
+	}
+
+	&__successfulSubmit {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem;
+		color: $success-text-color;
+	}
+
+	&__successIcon {
+		width: 10rem;
+		height: 10rem;
 	}
 
 	&__social {

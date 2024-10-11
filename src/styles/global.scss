@@ -64,8 +64,42 @@ textarea {
 .button {
 	padding: 10px 20px;
 	border: none;
+	border-radius: 8px;
 	cursor: pointer;
 	text-align: center;
+	transition: background-color 0.3s ease;
+}
+
+button.loading {
+	height: 44px;
+	position: relative;
+	color: rgba(255, 255, 255, 0.7);
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+button.loading::after {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	width: 24px;
+	height: 24px;
+	margin-top: 10px;
+	margin-left: -10px;
+	border: 3px solid rgba(255, 255, 255, 0.3);
+	border-top-color: white;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 .button-primary {

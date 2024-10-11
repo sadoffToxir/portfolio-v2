@@ -1,10 +1,9 @@
 import { useEffect, useMemo,useRef } from 'react'
 import * as THREE from 'three'
 
+import type { GLTFResult } from '@customTypes/Astronaut'
 import { useAnimations,useGLTF } from '@react-three/drei'
 import { useLoader, useThree } from '@react-three/fiber'
-
-import type { GLTFResult } from 'Astronaut'
 
 function GreetingAstronaut(props: JSX.IntrinsicElements['group']) {
   const group = useRef<THREE.Group>(null)

@@ -3,25 +3,30 @@ import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-import pluginJs from '@eslint/js';
 import reactThree from '@react-three/eslint-plugin'
 
 export default [
   { 
-    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     ignores: ['dist', 'eslint.config.cjs', 'eslint.config.mjs', 'postcss.config.cjs', 'tailwind.config.js', 'vite.config.ts'],
   },
-  { 
-    languageOptions: { globals: globals.browser } 
-  },
-  pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
   {
+    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
     settings: {
       react: {
         version: 'detect',
       },
+    },
+    plugins: {
+      'react': pluginReact,
+      '@react-three': reactThree,
+      'simple-import-sort': simpleImportSort
     },
     rules: {
       'react/react-in-jsx-scope': 'off', 
@@ -54,16 +59,6 @@ export default [
           ]
         }
       ]
-    },
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
-    plugins: {
-      'react-three': reactThree,
-      'simple-import-sort': simpleImportSort
     },
   },
 ];

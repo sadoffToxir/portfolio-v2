@@ -1,6 +1,6 @@
 // src/types/maath-random.d.ts
 declare module 'maath/random/dist/maath-random.esm' {
-  const random: any;
+  const random: unknown;
   export default random;
 }
 

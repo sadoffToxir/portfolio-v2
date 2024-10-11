@@ -12,14 +12,13 @@ const AboutSection = () => {
     <section id="about" className="aboutSection">
       <div className='container'>
         <div className="aboutSection__content">
-      
           <div className="aboutSection__leftContent">
             <h2 className='text-emphasis-text mb-5'>About me</h2>
             <div>
               {
                 about.description.map((paragraph, index) => 
                   <React.Fragment key={`about-p-${index}`}>
-                    <p>{paragraph}</p>
+                    <p dangerouslySetInnerHTML={{ __html: paragraph }} />
                     <br />
                   </React.Fragment>)
               }              

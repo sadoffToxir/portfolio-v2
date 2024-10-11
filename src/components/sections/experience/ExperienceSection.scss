@@ -11,10 +11,6 @@
 		gap: 2rem;
 	}
 
-	&__progress {
-		margin-top: 3rem;
-	}
-
 	&__companies {
 		display: flex;
 		flex-direction: column;
@@ -38,5 +34,9 @@
 
 	&__achievements {
 		line-height: 1.75rem;
+
+		& b {
+			color: $primary-accent;
+		}
 	}
 }
