@@ -11,7 +11,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="aboutSection">
       <div className='container'>
-        <h2 className='text-emphasis-text'>About me</h2>
+        <h2 className='text-emphasis-text lg:mb-12 text-center'>About me</h2>
         <div className="aboutSection__content">
           <div className="aboutSection__leftContent">
             <div>

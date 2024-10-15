@@ -1,19 +1,40 @@
 .heroSection {
-  height: calc(100vh - 64px);
+  height: 45vw;
   display: flex;
   align-items: center;
-  padding-bottom: 64px;
 
   &__textBlock {
-    flex: 1;
+    flex: 3;
     display: flex;
     flex-direction: column;
     justify-content: left;
     gap: 2rem;
+
+    & p {
+      line-height: 2rem;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: white;
+    }
   }
 
   &__mediaBlock {
+    // max-height: 700px;
+    // min-height: 400px;
     height: 100%;
-    flex: 1;
+    flex: 2;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .heroSection {
+    flex-direction: column;
+    height: auto;
+    gap: 2rem;
+    padding: 3rem 0;
+
+    & canvas {
+      height: 30vh !important;
+    }
   }
 }

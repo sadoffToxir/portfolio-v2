@@ -14,7 +14,7 @@ const HeroSection = () => {
   return (
     <section id='home' className="container heroSection">
       <div className='heroSection__textBlock'>
-        <h2 dangerouslySetInnerHTML={{ __html: title }} />
+        <p dangerouslySetInnerHTML={{ __html: title }} />
         <div className='flex gap-5'>
           <Link to={cta.url}><button className='button button-primary'>{cta.text}</button></Link>
           <Link target="_blank" to={cv.url}><button className='button button-secondary'>{cv.text}</button></Link>
@@ -22,7 +22,7 @@ const HeroSection = () => {
       </div>
       <div className='heroSection__mediaBlock'>
         <Suspense fallback={<BaseCanvasLoader />}>
-          <Canvas shadows className='z-[1]'>
+          <Canvas shadows>
             <Environment preset="city" />
             <GreetingAstronaut />
           </Canvas>

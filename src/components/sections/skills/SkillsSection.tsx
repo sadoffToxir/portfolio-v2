@@ -40,7 +40,7 @@ const SkillsSection = () => {
                 }
               </div>
             </div>
-            <div className='mt-10'>
+            <div className='mt-4'>
               <Link target='_blank' to={skills.cv.url}>
                 <button className='button button-primary flex gap-2 hover:gap-3'>
                   <span>{skills.cv.text}</span> <span>&#8594;</span>

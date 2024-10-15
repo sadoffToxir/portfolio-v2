@@ -6,8 +6,3 @@
   height: 100%;
   z-index: -1;
 }
-
-.canvasWrapper canvas {
-  height: 100% !important;
-  width: 100% !important;
-}
