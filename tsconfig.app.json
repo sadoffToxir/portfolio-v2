@@ -29,6 +29,7 @@
       "@styles/*": ["./src/styles/*"],
       "@assets/*": ["./src/assets/*"],
       "@services/*": ["./src/services/*"],
+      "@hooks/*": ["./src/hooks/*"],
     }
   },
   "include": ["src", "eslint.config.mjs", "postcss.config.cjs", "tailwind.config.js", "vite.config.ts"]

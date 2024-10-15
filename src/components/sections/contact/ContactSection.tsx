@@ -55,12 +55,12 @@ const ContactSection = () => {
   return (
     <section id="contact" className="contactSection">
       <div className='container'>
-        <h2 className='text-emphasis-text mb-12'>Contact</h2>
+        <h2 className='text-emphasis-text mb-12 text-center'>Contact</h2>
         <div className='contactSection__content'> 
           <div className='flex-1'>
             <h3 className='mb-3'>{contact.textColumn.title}</h3>
             <p className='mb-12'>{contact.textColumn.description}</p>
-            <div className='flex gap-20'>
+            <div className='contactSection__socialColumns'>
               {
                 socialLinks.map((linksCol, index) => 
                   <div key={`linksCol-${index}`} className='contactSection__socialLinks'>
@@ -74,7 +74,7 @@ const ContactSection = () => {
                           key={`link.title-${index}`} 
                         >
                           <div className='contactSection__socialIcon'>{link.icon}</div>
-                          <div className='flex flex-col '>
+                          <div className='flex flex-col'>
                             <span className='font-bold'>{link.title}</span>
                             <div>
                               <span>{link.text}</span>

@@ -161,9 +161,9 @@ export const content = {
       description: 'Feel free to reach out to me through any of the social platforms below. I\'m always open to connecting and discussing new opportunities.',
       socialLinks: [
         { title: 'Email', text: 'saidovvtokhir@gmail.com', url: 'mailto:saidovvtokhir@gmail.com', icon: svgIcons.email },
+        { title: 'WhatsApp', text: '+48 573 347 445', url: 'https://wa.me/48573347445', icon: svgIcons.whatsapp },
         { title: 'LinkedIn', text: 'saidofftoxir', url: 'https://linkedin.com/in/saidofftoxir/', icon: svgIcons.linkedin },
         { title: 'GitHub', text: 'sadoffToxir', url: 'https://github.com/sadoffToxir', icon: svgIcons.github },
-        { title: 'WhatsApp', text: '+48 573 347 445', url: 'https://wa.me/48573347445', icon: svgIcons.whatsapp },
         { title: 'Telegram', text: '@Notfound777', url: 'https://t.me/Notfound777', icon: svgIcons.telegram },
       ],
     },

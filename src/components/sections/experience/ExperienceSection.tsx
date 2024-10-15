@@ -36,7 +36,7 @@ const ExperienceSection = () => {
   return (
     <section id="experience" className="experienceSection">
       <div className='container'>
-        <h2 className='text-emphasis-text mb-12'>Experience</h2>
+        <h2 className='text-emphasis-text mb-12 text-center'>Experience</h2>
         <div className='experienceSection__content'>
           <div className='mt-12'>
             <VerticalStroke />

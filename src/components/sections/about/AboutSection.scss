@@ -9,6 +9,8 @@
 	&__content {
 		display: flex;
 		flex-wrap: wrap;
+		gap: 1rem;
+		align-items: center;
 	}
 
 	&__leftContent {
@@ -29,8 +31,8 @@
 		gap: 20px;
 		display: flex;
 		align-items: center;
-		flex-direction: column;
 		justify-content: center;
+		flex-direction: column;
 	}
 
 	&__profileImage {
@@ -58,6 +60,19 @@
 
 		&:hover {
 			color: $highlight;
+		}
+	}
+}
+
+@media screen and (max-width: 860px) {
+	.aboutSection {
+		&__content {
+			flex-direction: column-reverse;
+		}
+
+		&__rightContent {
+			padding: 2rem 0;
+			justify-content: center;
 		}
 	}
 }

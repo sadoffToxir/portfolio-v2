@@ -11,9 +11,9 @@ const AboutSection = () => {
   return (
     <section id="about" className="aboutSection">
       <div className='container'>
+        <h2 className='text-emphasis-text'>About me</h2>
         <div className="aboutSection__content">
           <div className="aboutSection__leftContent">
-            <h2 className='text-emphasis-text mb-5'>About me</h2>
             <div>
               {
                 about.description.map((paragraph, index) => 
